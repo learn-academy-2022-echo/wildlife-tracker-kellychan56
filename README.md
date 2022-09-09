@@ -48,12 +48,28 @@ The Forest Service is considering a proposal to place in conservancy a forest of
 
 **Acceptance Criteria**
 
-- Create a resource for animal sightings with the following information: latitude, longitude, date
-  - Hint: An animal has_many sightings (rails g resource Sighting animal_id:integer ...)
-  - Hint: Date is written in Active Record as `yyyy-mm-dd` (“2022-07-28")
-- Can create a new animal sighting in the database
-- Can update an existing animal sighting in the database
-- Can remove an animal sighting in the database
+✅ - Create a resource for animal sightings with the following information: latitude, longitude, date
+    - Hint: An animal has_many sightings (rails g resource Sighting animal_id:integer ...)
+    - Hint: Date is written in Active Record as `yyyy-mm-dd` (“2022-07-28")
+    $ `rails g resource Sightings animal_id:integer latitude:string longitude:date date:date`
+        Prefix  Verb    URI Pattern Controller         #Action
+        sightings
+                GET     /sightings(.:format)             sightings#index
+                POST    /sightings(.:format)             sightings#create
+        new_sighting
+                GET     /sightings/new(.:format)         sightings#new
+        edit_sighting
+                GET     /sightings/:id/edit(.:format)    sightings#edit
+        sighting
+                GET     /sightings/:id(.:format)         sightings#show
+                PATCH   /sightings/:id(.:format)         sightings#update
+                PUT     /sightings/:id(.:format)         sightings#update
+                DELETE  /sightings/:id(.:format)         sightings#destroy
+    - made an association between animal and sighting in models
+
+✅ - Can create a new animal sighting in the database
+✅ - Can update an existing animal sighting in the database
+✅ - Can remove an animal sighting in the database
 
 **Story 3: In order to see the wildlife sightings, as a user of the API, I need to run reports on animal sightings.**
 

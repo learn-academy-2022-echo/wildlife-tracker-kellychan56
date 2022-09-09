@@ -5,6 +5,8 @@ class AnimalsController < ApplicationController
     end
 
     def show
+        animal = Animal.find(params[:id])
+        render json: animal
     end
 
     def create
