@@ -8,11 +8,39 @@ The Forest Service is considering a proposal to place in conservancy a forest of
 
 **Acceptance Criteria**
 
-- Create a resource for animal with the following information: common name and scientific binomial
-- Can see the data response of all the animals
-- Can create a new animal in the database
-- Can update an existing animal in the database
-- Can remove an animal entry in the database
+✅ - Create a resource for animal with the following information: common name and scientific binomial
+    $ `rails g resource Animal common_name: string scientific_binomial: string`
+        Prefix  Verb    URI Pattern Controller         #Action
+        animals
+                GET     /animals(.:format)             animals#index
+                POST    /animals(.:format)             animals#create
+        new_animal
+                GET     /animals/new(.:format)         animals#new
+        edit_animal
+                GET     /animals/:id/edit(.:format)    animals#edit
+        animal
+                GET     /animals/:id(.:format)         animals#show
+                PATCH   /animals/:id(.:format)         animals#update
+                PUT     /animals/:id(.:format)         animals#update
+                DELETE  /animals/:id(.:format)         animals#destroy
+    $ `rails db:migrate`
+    - disable authenticity token
+        `skip_before_action :verify_authenticity_token`
+
+✅ - Can see the data response of all the animals
+    - create one instance of an animal in rails console to see it in the db
+        >> Animal.create(common_name:'Dratini', scientific_binomial:'aquatilis draconis')
+    - make an index method to render the animal database
+
+✅ - Can create a new animal in the database
+    - make a create method to add individual animals
+    - add strong params to controller for animal
+
+✅ - Can update an existing animal in the database
+    - make an update method
+
+✅ - Can remove an animal entry in the database
+    - make a destroy method
 
 **Story 2: In order to track wildlife sightings, as a user of the API, I need to manage animal sightings.**
 
