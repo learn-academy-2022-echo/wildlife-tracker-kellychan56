@@ -77,9 +77,10 @@ The Forest Service is considering a proposal to place in conservancy a forest of
 
 **Acceptance Criteria**
 
-- Can see one animal with all its associated sightings
-  - Hint: Checkout [this example](https://github.com/learn-co-students/js-rails-as-api-rendering-related-object-data-in-json-v-000#using-include) on how to include associated records
-- Can see all the all sightings during a given time period
+✅ - Can see one animal with all its associated sightings
+✅ - Hint: Checkout [this example](https://github.com/learn-co-students/js-rails-as-api-rendering-related-object-data-in-json-v-000#using-include) on how to include associated records
+  - on the show method for the animals controller, use "include" to render the animal sightings along with the animal
+✅ - Can see all the all sightings during a given time period
   - Hint: Your controller can use a range to look like this:
 
 ```ruby
@@ -91,9 +92,12 @@ class SightingsController < ApplicationController
 end
 ```
 
-- Hint: Be sure to add the start_date and end_date to what is permitted in your strong parameters method
-- Hint: Utilize the params section in Postman to ease the developer experience
-- Hint: [Routes with params](./controllers-routes-views.md)
+✅ - Hint: Be sure to add the start_date and end_date to what is permitted in your strong parameters method
+✅ - Hint: Utilize the params section in Postman to ease the developer experience
+  - params section in Postman has key and value columns
+    - in the key column, enter start_date and end_date
+    - in the value column, enter the desired dates for the range
+✅ - Hint: [Routes with params](./controllers-routes-views.md)
 
 ## Stretch Challenges
 
